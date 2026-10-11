@@ -1,0 +1,95 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Amulya 💗</title>
+<style>
+*{box-sizing:border-box}
+body{
+margin:0;min-height:100vh;padding:25px 15px;
+display:flex;align-items:center;justify-content:center;
+font-family:Arial,sans-serif;text-align:center;color:#873d60;
+background:linear-gradient(135deg,#ffe0ee,#fff5fa,#ffc6df);
+overflow-x:hidden
+}
+.card{
+width:100%;max-width:450px;padding:28px 20px;
+background:#ffffffd9;border:2px solid white;
+border-radius:28px;box-shadow:0 12px 35px #d95c8c30
+}
+.tag{color:#d94386;font-size:12px;letter-spacing:2px;font-weight:bold}
+h1{color:#e74791;font-size:30px;line-height:1.4}
+.gift{font-size:100px;animation:bounce 1.5s infinite}
+button{
+background:#f05299;color:white;border:0;border-radius:30px;
+padding:14px 23px;font-size:16px;font-weight:bold;
+margin-top:15px;box-shadow:0 5px 15px #e7479140
+}
+button:active{transform:scale(.96)}
+.hidden{display:none}
+.message{
+background:#fff2f8;border-radius:20px;padding:20px;
+line-height:1.8;margin-top:20px
+}
+.cake{font-size:75px;margin:15px}
+.heart{position:fixed;bottom:-40px;animation:floatUp 5s linear forwards;pointer-events:none}
+.footer{font-size:12px;margin-top:22px}
+@keyframes bounce{50%{transform:translateY(-12px) rotate(3deg)}}
+@keyframes floatUp{to{transform:translateY(-110vh) rotate(35deg);opacity:0}}
+@keyframes pop{from{transform:scale(.7);opacity:0}to{transform:scale(1);opacity:1}}
+.reveal{animation:pop .7s ease}
+</style>
+</head>
+<body>
+<main class="card">
+<section id="first">
+<div class="tag">A LITTLE SURPRISE FOR YOU 🎀</div>
+<div class="gift">🎁</div>
+<h1>Hey, Amulya! 💗</h1>
+<p>Someone special has a little surprise for you!</p>
+<p>Ready to open your gift? 🥹💕</p>
+<button onclick="openGift()">Open Your Surprise 💝</button>
+</section>
+
+<section id="surprise" class="hidden">
+<div style="font-size:45px">🎀✨💗✨🎀</div>
+<p class="tag">TODAY IS YOUR SPECIAL DAY</p>
+<h1>Happy Birthday<br>Siddi Lakshmi Amulya! 🎂</h1>
+<div class="cake">🎂</div>
+<div class="message">
+<h2>Dear Amulya, 💕</h2>
+<p>Wishing you a birthday filled with endless happiness, beautiful smiles and unforgettable memories! 🌸</p>
+<p>May all your dreams come true and may your life always be filled with love, laughter and success. Keep smiling and shining, my dear friend! 🦋</p>
+<h3>You are truly special! 💖</h3>
+<p>Lots of love and friendship, always! 🫶</p>
+</div>
+<button onclick="makeWish()">Make a Wish 🕯️</button>
+<p id="wish" class="hidden">Close your eyes and make a beautiful wish, Amulya! ✨💗</p>
+<div class="footer">Made with love, just for you 🌷</div>
+</section>
+</main>
+<script>
+function openGift(){
+document.getElementById("first").classList.add("hidden");
+document.getElementById("surprise").classList.remove("hidden");
+document.getElementById("surprise").classList.add("reveal");
+for(let i=0;i<35;i++){
+setTimeout(()=>{
+let h=document.createElement("div");
+h.className="heart";
+h.textContent=["💗","💕","💖","🌸","✨","🎀"][Math.floor(Math.random()*6)];
+h.style.left=Math.random()*100+"vw";
+h.style.fontSize=(18+Math.random()*22)+"px";
+document.body.appendChild(h);
+setTimeout(()=>h.remove(),5000);
+},i*90);
+}
+}
+function makeWish(){
+document.getElementById("wish").classList.remove("hidden");
+}
+</script>
+</body>
+</html>
